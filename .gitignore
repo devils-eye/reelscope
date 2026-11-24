@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules
+.output
+.wxt
+stats.html
+stats-*.json
+web-ext.config.ts
+
+# Local data: the SQLite DB (data/reelscope.db), cached thumbnails and videos
+data/
+
+# Logs
+logs
+*.log
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.sw?

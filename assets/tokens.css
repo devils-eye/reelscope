@@ -1,0 +1,164 @@
+/*
+ * Design tokens for the extension pages (library + popup).
+ *
+ * Neutrals carry everything. Two accents, each with one job:
+ *   marigold: an outlier signal (same marigold as the in-page Instagram UI)
+ *   key green: done and saved (a reel you marked analyzed, the popup's status)
+ * Type is one family, Archivo, used across its width axis: expanded for
+ * titles, normal for reading, condensed for numbers.
+ */
+
+:root {
+  --sans: 'Archivo Variable', 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  /* type scale (px): 12 13 14 16 19 23 30 40 */
+  --t-xs: 12px;
+  --t-sm: 13px;
+  --t-md: 14px;
+  --t-lg: 16px;
+  --t-xl: 19px;
+  --t-2xl: 23px;
+  --t-3xl: 30px;
+  --t-4xl: 40px;
+
+  /* spacing, 4px base */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  color-scheme: light;
+  --paper: #f2f2ee;
+  --surface: #ffffff;
+  --sunken: #e7e7e2;
+  --ink: #17181b;
+  --ink-2: #55585f;
+  --ink-3: #6b6e75;
+  --line: #deded8;
+  --line-2: #cbcbc4;
+  --hover: rgba(23, 24, 27, 0.05);
+  --scrim: rgba(18, 19, 22, 0.56);
+
+  --key: #00a13b;
+  --key-ink: #04632a;
+  --key-wash: #d8f3e0;
+  --key-line: #6fcf92;
+
+  --marigold: #f4b740;
+  --marigold-ink: #8a5600;
+  --marigold-wash: #fbe7bd;
+
+  --ok: #11823b;
+  --bad: #c03221;
+  --bad-wash: #fbe3df;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #131417;
+  --surface: #1b1c20;
+  --sunken: #0e0f11;
+  --ink: #ececea;
+  --ink-2: #a4a6ac;
+  --ink-3: #80838b;
+  --line: #2a2c31;
+  --line-2: #3a3c43;
+  --hover: rgba(236, 236, 234, 0.06);
+  --scrim: rgba(5, 6, 8, 0.72);
+
+  --key: #2fd06a;
+  --key-ink: #7ee8a4;
+  --key-wash: rgba(47, 208, 106, 0.13);
+  --key-line: rgba(47, 208, 106, 0.55);
+
+  --marigold: #f4b740;
+  --marigold-ink: #f4b740;
+  --marigold-wash: rgba(244, 183, 64, 0.15);
+
+  --ok: #4cd480;
+  --bad: #ff7a66;
+  --bad-wash: rgba(255, 122, 102, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--t-md);
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+  font-variant-numeric: tabular-nums;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+code,
+kbd {
+  font-family: var(--mono);
+  font-size: 0.92em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

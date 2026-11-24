@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ReelScope harness</title>
+    <!-- Page hook first, like the extension's document_start MAIN-world script. -->
+    <script type="module" src="/hook.ts"></script>
+  </head>
+  <body>
+    <!-- ssr -->
+    <!-- Fake Instagram, then the real in-page UI (the content script runs after the page). -->
+    <script type="module" src="/fixture/ig.js"></script>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>

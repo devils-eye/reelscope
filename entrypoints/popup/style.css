@@ -1,0 +1,233 @@
+/* Toolbar popup. Tokens live in assets/tokens.css. */
+
+body {
+  width: 360px;
+  background: var(--surface);
+}
+
+.dim {
+  color: var(--ink-3);
+}
+.bad {
+  color: var(--bad);
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s3);
+  padding: var(--s4) var(--s4) 0;
+}
+.pop-head h1 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: -0.01em;
+}
+
+.pop-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-xs);
+  font-weight: 550;
+  color: var(--ink-2);
+}
+.pop-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--key);
+}
+.pop-status[data-up='false'] {
+  color: var(--bad);
+}
+.pop-status[data-up='false'] i {
+  background: var(--bad);
+}
+
+.pop-line {
+  margin: var(--s3) var(--s4) 0;
+  font-size: var(--t-md);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.pop-line b {
+  font-weight: 650;
+  color: var(--ink);
+}
+.pop-warn {
+  padding: 8px 10px;
+  margin-top: var(--s2);
+  font-size: var(--t-sm);
+  color: var(--marigold-ink);
+  background: var(--marigold-wash);
+  border-radius: 8px;
+}
+
+.pop-offline {
+  padding: 12px 14px;
+  margin: var(--s3) var(--s4) 0;
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+  background: var(--bad-wash);
+  border-radius: 10px;
+}
+.pop-offline p {
+  margin: 0 0 var(--s2);
+}
+.pop-offline code {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: var(--t-xs);
+  color: var(--ink);
+  background: var(--surface);
+  border-radius: 6px;
+}
+
+.pop-recent {
+  margin-top: var(--s4);
+  border-top: 1px solid var(--line);
+}
+.pop-recent h2 {
+  margin: var(--s3) var(--s4) var(--s1);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--ink-3);
+}
+.pop-recent ul {
+  padding: 0 var(--s2);
+  margin: 0;
+  list-style: none;
+}
+
+.pop-row {
+  display: grid;
+  grid-template-columns: 27px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 7px var(--s2);
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+}
+.pop-row:hover {
+  background: var(--hover);
+}
+.pop-row:focus-visible {
+  outline-offset: -2px;
+}
+
+.pop-thumb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  width: 27px;
+  height: 48px;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  color: var(--ink-3);
+  background: var(--sunken);
+  border-radius: 4px;
+}
+.pop-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.pop-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pop-who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.35;
+}
+.pop-handle {
+  overflow: hidden;
+  font-size: var(--t-sm);
+  font-weight: 620;
+  color: var(--ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pop-cap {
+  overflow: hidden;
+  font-size: var(--t-xs);
+  color: var(--ink-3);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pop-nums {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+.pop-views {
+  font-size: var(--t-sm);
+  font-weight: 620;
+  color: var(--ink);
+}
+.pop-mult {
+  padding: 0 4px;
+  font-weight: 650;
+  border-radius: 4px;
+}
+.pop-mult[data-tier='breakout'] {
+  color: var(--ct-breakout-fg);
+  background: var(--ct-breakout-bg);
+}
+.pop-mult[data-tier='strong'] {
+  color: var(--ct-strong-fg);
+  background: var(--ct-strong-bg);
+}
+.pop-mult[data-tier='outlier'] {
+  color: var(--ct-outlier-fg);
+}
+.pop-mult[data-tier='normal'],
+.pop-mult[data-tier='under'] {
+  color: var(--ink-3);
+}
+.pop-pipe {
+  font-size: var(--t-xs);
+  color: var(--ink-3);
+}
+
+.pop-foot {
+  padding: var(--s3) var(--s4) var(--s4);
+  margin-top: var(--s3);
+  border-top: 1px solid var(--line);
+}
+.pop-open {
+  width: 100%;
+  height: 38px;
+  font-size: var(--t-md);
+  font-weight: 650;
+  color: var(--paper);
+  background: var(--ink);
+  border: 0;
+  border-radius: 9px;
+}
+.pop-open:hover {
+  opacity: 0.9;
+}
